@@ -40,7 +40,6 @@ button { cursor: crosshair; border: none; background: none; font-family: inherit
 ::-webkit-scrollbar-track { background: var(--off-white); border-left: 2px solid var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--black); }
 
-/* ── PAGE SYSTEM ─────────────────────────────────────────── */
 .page { display: none; min-height: 100vh; }
 .page.active { display: block; }
 
