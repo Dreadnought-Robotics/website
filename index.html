@@ -1,263 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DREADNOUGHT ROBOTICS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+  <!-- NAVBAR -->
 
-<nav id="navbar">
-  <div class="nav-logo" onclick="showPage('home')">
-    <!-- <div class="nav-logo-mark">D</div> -->
-    <!-- <div class="nav-logo-text">Dreadnought</div> -->
+  <nav id="navbar">
+    <div class="nav-logo" onclick="showPage('home')">
+      <!-- <div class="nav-logo-mark">D</div> -->
+      <!-- <div class="nav-logo-text">Dreadnought</div> -->
 
-    <img src="assets/DNT Logo Remastered White.png" alt="Dreadnought Logo" style="height:40px;">
+      <img src="assets/DNT Logo Remastered White.png" alt="Dreadnought Logo" style="height:40px;">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('projects')" id="nav-projects">Projects</a></li>
+      <!-- <li><a href="#" onclick="showPage('competitions')" id="nav-competitions">Competitions</a></li> -->
+      <li><a href="#" onclick="showPage('team')" id="nav-team">Team</a></li>
+      <li><a href="#" onclick="showPage('gallery')" id="nav-gallery">Gallery</a></li>
+      <!-- <li><a href="#" onclick="showPage('sponsors')"     id="nav-sponsors">Sponsors</a></li> -->
+      <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#" onclick="showPage('home');toggleMenu()">Home</a>
+    <a href="#" onclick="showPage('projects');toggleMenu()">Projects</a>
+    <!-- <a href="#" onclick="showPage('competitions');toggleMenu()">Competitions</a> -->
+
+    <a href="#" onclick="showPage('team');toggleMenu()">Team</a>
+    <a href="#" onclick="showPage('gallery');toggleMenu()">Gallery</a>
+    <!-- <a href="#" onclick="showPage('sponsors');toggleMenu()">Sponsors</a> -->
+    <a href="#" onclick="showPage('contact');toggleMenu()">Contact</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')"         id="nav-home"         class="active">Home</a></li>
-    <li><a href="#" onclick="showPage('projects')"     id="nav-projects">Projects</a></li>
-    <!-- <li><a href="#" onclick="showPage('competitions')" id="nav-competitions">Competitions</a></li> -->
-    <li><a href="#" onclick="showPage('team')"         id="nav-team">Team</a></li>
-    <li><a href="#" onclick="showPage('gallery')"      id="nav-gallery">Gallery</a></li>
-    <!-- <li><a href="#" onclick="showPage('sponsors')"     id="nav-sponsors">Sponsors</a></li> -->
-    <li><a href="#" onclick="showPage('contact')"      id="nav-contact">Contact</a></li>
-  </ul>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#" onclick="showPage('home');toggleMenu()">Home</a>
-  <a href="#" onclick="showPage('projects');toggleMenu()">Projects</a>
-  <!-- <a href="#" onclick="showPage('competitions');toggleMenu()">Competitions</a> -->
-
-  <a href="#" onclick="showPage('team');toggleMenu()">Team</a>
-  <a href="#" onclick="showPage('gallery');toggleMenu()">Gallery</a>
-  <!-- <a href="#" onclick="showPage('sponsors');toggleMenu()">Sponsors</a> -->
-  <a href="#" onclick="showPage('contact');toggleMenu()">Contact</a>
-</div>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      HOME PAGE
      ============================================================ -->
-<div id="page-home" class="page active">
+  <div id="page-home" class="page active">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-center">
-      <div class="hero-eyebrow">VIT Chennai &middot; Autonomous Robotics &middot; Est. 2019</div>
-      <div class="hero-logo-block">
-        <img src="assets/DNT Logo Remastered White.png" alt="DR Logo" style="width:80px; height:80px; object-fit:contain;">
-      </div>
-      <span class="hero-title-top">DREADNOUGHT</span>
-      <span class="hero-title-bottom">ROBOTICS</span>
-      <p class="hero-sub">Autonomous Underwater Robotics Team, Building intelligent machines for international competition.</p>
-      <div class="hero-buttons">
-        <button class="btn-brutal white" onclick="showPage('projects')">View Projects &rarr;</button>
-        <button class="btn-brutal outline" onclick="showPage('team')">Meet the Team</button>
-      </div>
-    </div>
-    <div class="hero-stats-bar">
-      <div class="hero-stat-col">
-        <div class="hero-stat-num">4+</div>
-        <div class="hero-stat-label">Years Active</div>
-        <div class="hero-stat-desc">Building since 2019</div>
-      </div>
-      <div class="hero-stat-col">
-        <div class="hero-stat-num">50+</div>
-        <div class="hero-stat-label">Team Members</div>
-        <div class="hero-stat-desc">Across all disciplines</div>
-      </div>
-      <div class="hero-stat-col">
-        <div class="hero-stat-num">06</div>
-        <div class="hero-stat-label">Competitions</div>
-        <div class="hero-stat-desc">National + International</div>
-      </div>
-      <div class="hero-stat-col">
-        <div class="hero-stat-num">03</div>
-        <div class="hero-stat-label">AUV Builds</div>
-        <div class="hero-stat-desc">Full system iterations</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ACHIEVEMENTS -->
-  <section class="achievements">
-    <div class="section-inner">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Recognition</div>
-          <div class="section-title">ACHIEVE<span class="inv">MENTS</span></div>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-center">
+        <div class="hero-eyebrow">VIT Chennai &middot; Autonomous Robotics &middot; Est. 2019</div>
+        <div class="hero-logo-block">
+          <img src="assets/DNT Logo Remastered White.png" alt="DR Logo"
+            style="width:80px; height:80px; object-fit:contain;">
         </div>
-        <div class="section-num">01</div>
+        <span class="hero-title-top">DREADNOUGHT</span>
+        <span class="hero-title-bottom">ROBOTICS</span>
+        <p class="hero-sub">Autonomous Underwater Robotics Team, Building intelligent machines for international
+          competition.</p>
+        <div class="hero-buttons">
+          <button class="btn-brutal white" onclick="showPage('projects')">View Projects &rarr;</button>
+          <button class="btn-brutal outline" onclick="showPage('team')">Meet the Team</button>
+        </div>
       </div>
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <div class="achievement-year">2024</div>
-          <div class="achievement-rank">Runner-Up</div>
-          <div class="achievement-title">TAC Autonomy Challenge</div>
-          <div class="achievement-desc">Secured second place in the TAC Autonomy Challenge with an advanced autonomous underwater navigation system.</div>
+      <div class="hero-stats-bar">
+        <div class="hero-stat-col">
+          <div class="hero-stat-num">4+</div>
+          <div class="hero-stat-label">Years Active</div>
+          <div class="hero-stat-desc">Building since 2019</div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-year">2026</div>
-          <div class="achievement-rank">Top 4</div>
-          <div class="achievement-title">SAUVC Singapore</div>
-          <div class="achievement-desc"> Ranked among the Top 4 teams at the Singapore Autonomous Underwater Vehicle Challenge and received the Most Innovative AUV Design award for our underwater robotics platform.</div>
+        <div class="hero-stat-col">
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Team Members</div>
+          <div class="hero-stat-desc">Across all disciplines</div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-year">2025</div>
-          <div class="achievement-rank">Top 25</div>
-          <div class="achievement-title">SAUVC Singapore</div>
-          <div class="achievement-desc">Selected to represent India and VIT Chennai at the Singapore Autonomous Underwater Vehicle Challenge, competing with top global AUV teams.</div>
+        <div class="hero-stat-col">
+          <div class="hero-stat-num">06</div>
+          <div class="hero-stat-label">Competitions</div>
+          <div class="hero-stat-desc">National + International</div>
         </div>
-        <div class="achievement-card">
-          <div class="achievement-year">2026</div>
-          <div class="achievement-rank">Winners</div>
-          <div class="achievement-title">Robofest</div>
-          <div class="achievement-desc">Won National Competition held in Gujrat and won 2.5 Lakhs</div>
+        <div class="hero-stat-col">
+          <div class="hero-stat-num">03</div>
+          <div class="hero-stat-label">AUV Builds</div>
+          <div class="hero-stat-desc">Full system iterations</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <div class="about">
-    <div class="about-img-side">
-      <img src="assets/AUV-MIRA223.jpeg" alt="MIRA AUV 2023" style="width:100%; height:100%; object-fit:cover;">
-      <div class="about-img-label">Project MIRA &mdash;TAC Challenge 2024</div>
-    </div>
-    <div class="about-content-side">
-      <div class="section-label">Who We Are</div>
-      <div class="section-title" style="font-size:clamp(40px,4vw,60px);margin-bottom:28px;">ABOUT<br><span class="inv">THE TEAM</span></div>
-      <p class="about-text primary">Dreadnought Robotics is a student-led autonomous systems team at VIT Chennai focused on building AUVs for international competitions.</p>
-      <p class="about-text">Our interdisciplinary crew brings together robotics, AI, computer vision, embedded systems, and mechanical design.</p>
-      <p class="about-text">From concept to competition pool, every AUV represents hundreds of hours of design, simulation, testing, and iteration.</p>
-      <div class="about-tags">
-        <span class="about-tag">Robotics</span>
-        <span class="about-tag">Computer Vision</span>
-        <span class="about-tag">Embedded Systems</span>
-        <span class="about-tag">Mechanical Design</span>
-        <span class="about-tag">AI / Deep Learning</span>
-        <span class="about-tag">Control Systems</span>
-      </div>
-      <div style="margin-top:36px;">
-        <button class="btn-brutal dark" onclick="showPage('team')">Meet the Team &rarr;</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- FEATURED PROJECTS -->
-  <section class="projects-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Engineering</div>
-          <div class="section-title">FEATURED<br><span class="inv">PROJECTS</span></div>
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Recognition</div>
+            <div class="section-title">ACHIEVE<span class="inv">MENTS</span></div>
+          </div>
+          <div class="section-num">01</div>
         </div>
-        <div class="section-num">02</div>
-      </div>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card" onclick="showPage('projects')">
-        <div class="project-img-neo">
-          <img src="assets/MIRA2.jpeg" alt="Project MIRA 2.0 AUV">
-          <div class="project-img-badge">Flagship · AUV</div>
-          <div class="project-num">01</div>
-        </div>
-        <div class="project-content-inner">
-          <div class="project-title">Project MIRA 2.0 </div>
-          <div class="project-desc">Competition-grade Autonomous Underwater Vehicle designed for SAUVC and TAC, featuring 6-DOF motion control, stereo vision perception, and integrated IMU-based navigation for autonomous task execution.</div>
-          <div class="project-tags"><span class="project-tag">ROS2</span><span class="project-tag">Computer Vision</span><span class="project-tag">SLAM</span></div>
-          <a class="project-link">View Project &rarr;</a>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-year">2024</div>
+            <div class="achievement-rank">Runner-Up</div>
+            <div class="achievement-title">TAC Autonomy Challenge</div>
+            <div class="achievement-desc">Secured second place in the TAC Autonomy Challenge with an advanced autonomous
+              underwater navigation system.</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-year">2026</div>
+            <div class="achievement-rank">Top 4</div>
+            <div class="achievement-title">SAUVC Singapore</div>
+            <div class="achievement-desc"> Ranked among the Top 4 teams at the Singapore Autonomous Underwater Vehicle
+              Challenge and received the Most Innovative AUV Design award for our underwater robotics platform.</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-year">2025</div>
+            <div class="achievement-rank">Top 25</div>
+            <div class="achievement-title">SAUVC Singapore</div>
+            <div class="achievement-desc">Selected to represent India and VIT Chennai at the Singapore Autonomous
+              Underwater Vehicle Challenge, competing with top global AUV teams.</div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-year">2026</div>
+            <div class="achievement-rank">Winners</div>
+            <div class="achievement-title">Robofest</div>
+            <div class="achievement-desc">Won National Competition held in Gujrat and won 2.5 Lakhs</div>
+          </div>
         </div>
       </div>
-      <div class="project-card" onclick="showPage('projects')">
-  <div class="project-img-neo">
-    <img src="assets/MIRA1.jpeg" alt="Project MIRA AUV">
-    <div class="project-img-badge">AUV</div>
-    <div class="project-num">02</div>
-  </div>
+    </section>
 
-  <div class="project-content-inner">
-    <div class="project-title">Project MIRA</div>
-
-    <div class="project-desc">
-      Our first-generation competition Autonomous Underwater Vehicle developed for underwater robotics challenges.
-      MIRA features 6-DOF motion control, vision-based perception, and an onboard autonomy stack for executing mission tasks.
-    </div>
-
-    <div class="project-tags">
-      <span class="project-tag">ROS</span>
-      <span class="project-tag">Computer Vision</span>
-      <span class="project-tag">Autonomous Navigation</span>
-    </div>
-
-    <a class="project-link">View Project &rarr;</a>
-  </div>
-</div>
-    </div>
-    <div style="padding:40px 48px 0; max-width:1280px; margin:0 auto;">
-      <button class="btn-brutal dark" onclick="showPage('projects')">View All Projects &rarr;</button>
-    </div>
-  </section>
-
-  <!-- COMPETITIONS PREVIEW -->
-  <section class="competitions-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Where We Compete</div>
-          <div class="section-title" style="color:var(--white);">COMPE<span style="background:var(--white);color:var(--black);padding:0 6px;">TITIONS</span></div>
-        </div>
-        <div class="section-num" style="color:var(--grey-dark);">03</div>
+    <!-- ABOUT -->
+    <div class="about">
+      <div class="about-img-side">
+        <img src="assets/AUV-MIRA223.jpeg" alt="MIRA AUV 2023" style="width:100%; height:100%; object-fit:cover;">
+        <div class="about-img-label">Project MIRA &mdash;TAC Challenge 2024</div>
       </div>
-      <div class="competitions-grid">
-        <div class="competition-card" onclick="showPage('competitions')">
-          <div class="competition-header sauvc-bg">
-            <div>
-              <div class="competition-header-title">SAUVC</div>
-              <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--white);margin-top:6px;text-transform:uppercase;">
-                Singapore · International
+      <div class="about-content-side">
+        <div class="section-label">Who We Are</div>
+        <div class="section-title" style="font-size:clamp(40px,4vw,60px);margin-bottom:28px;">ABOUT<br><span
+            class="inv">THE TEAM</span></div>
+        <p class="about-text primary">Dreadnought Robotics is a student-led autonomous systems team at VIT Chennai
+          focused on building AUVs for international competitions.</p>
+        <p class="about-text">Our interdisciplinary crew brings together robotics, AI, computer vision, embedded
+          systems, and mechanical design.</p>
+        <p class="about-text">From concept to competition pool, every AUV represents hundreds of hours of design,
+          simulation, testing, and iteration.</p>
+        <div class="about-tags">
+          <span class="about-tag">Robotics</span>
+          <span class="about-tag">Computer Vision</span>
+          <span class="about-tag">Embedded Systems</span>
+          <span class="about-tag">Mechanical Design</span>
+          <span class="about-tag">AI / Deep Learning</span>
+          <span class="about-tag">Control Systems</span>
+        </div>
+        <div style="margin-top:36px;">
+          <button class="btn-brutal dark" onclick="showPage('team')">Meet the Team &rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="projects-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Engineering</div>
+            <div class="section-title">FEATURED<br><span class="inv">PROJECTS</span></div>
+          </div>
+          <div class="section-num">02</div>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" onclick="showPage('projects')">
+          <div class="project-img-neo">
+            <img src="assets/MIRA2.jpeg" alt="Project MIRA 2.0 AUV">
+            <div class="project-img-badge">Flagship · AUV</div>
+            <div class="project-num">01</div>
+          </div>
+          <div class="project-content-inner">
+            <div class="project-title">Project MIRA 2.0 </div>
+            <div class="project-desc">Competition-grade Autonomous Underwater Vehicle designed for SAUVC and TAC,
+              featuring 6-DOF motion control, stereo vision perception, and integrated IMU-based navigation for
+              autonomous task execution.</div>
+            <div class="project-tags"><span class="project-tag">ROS2</span><span class="project-tag">Computer
+                Vision</span><span class="project-tag">SLAM</span></div>
+            <a class="project-link">View Project &rarr;</a>
+          </div>
+        </div>
+        <div class="project-card" onclick="showPage('projects')">
+          <div class="project-img-neo">
+            <img src="assets/MIRA1.jpeg" alt="Project MIRA AUV">
+            <div class="project-img-badge">AUV</div>
+            <div class="project-num">02</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Project MIRA</div>
+
+            <div class="project-desc">
+              Our first-generation competition Autonomous Underwater Vehicle developed for underwater robotics
+              challenges.
+              MIRA features 6-DOF motion control, vision-based perception, and an onboard autonomy stack for executing
+              mission tasks.
+            </div>
+
+            <div class="project-tags">
+              <span class="project-tag">ROS</span>
+              <span class="project-tag">Computer Vision</span>
+              <span class="project-tag">Autonomous Navigation</span>
+            </div>
+
+            <a class="project-link">View Project &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:40px 48px 0; max-width:1280px; margin:0 auto;">
+        <button class="btn-brutal dark" onclick="showPage('projects')">View All Projects &rarr;</button>
+      </div>
+    </section>
+
+    <!-- COMPETITIONS PREVIEW -->
+    <section class="competitions-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Where We Compete</div>
+            <div class="section-title" style="color:var(--white);">COMPE<span
+                style="background:var(--white);color:var(--black);padding:0 6px;">TITIONS</span></div>
+          </div>
+          <div class="section-num" style="color:var(--grey-dark);">03</div>
+        </div>
+        <div class="competitions-grid">
+          <div class="competition-card" onclick="showPage('competitions')">
+            <div class="competition-header sauvc-bg">
+              <div>
+                <div class="competition-header-title">SAUVC</div>
+                <div
+                  style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--white);margin-top:6px;text-transform:uppercase;">
+                  Singapore · International
+                </div>
               </div>
             </div>
-          </div>
 
-  <div class="competition-content">
-    <div class="competition-name">Singapore AUV Challenge</div>
-    <div class="competition-location">&#x1F4CD; Singapore · International</div>
-    <div class="competition-desc">Asia's most prestigious AUV competition. Zero human intervention during autonomous mission runs.</div>
-    <div class="competition-result"> TOP 25 — 2025</div>
-  </div>
-</div>
-        <div class="competition-card" onclick="showPage('competitions')">
-          <div class="competition-header">
-            <div>
-              <div class="competition-header-title">TAC Challenge</div>
-              <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--grey-mid);margin-top:6px;text-transform:uppercase;">Norway &middot; International</div>
+            <div class="competition-content">
+              <div class="competition-name">Singapore AUV Challenge</div>
+              <div class="competition-location">&#x1F4CD; Singapore · International</div>
+              <div class="competition-desc">Asia's most prestigious AUV competition. Zero human intervention during
+                autonomous mission runs.</div>
+              <div class="competition-result"> TOP 25 — 2025</div>
             </div>
           </div>
-          <div class="competition-content">
-            <div class="competition-name">TAC Autonomy Challenge</div>
-            <div class="competition-location">&#x1F4CD; Norway &middot; International</div>
-            <div class="competition-desc">Norway's premier autonomous systems challenge. Teams from top engineering institutes.</div>
-            <div class="competition-result"> Runner-Up &mdash; 2024</div>
+          <div class="competition-card" onclick="showPage('competitions')">
+            <div class="competition-header">
+              <div>
+                <div class="competition-header-title">TAC Challenge</div>
+                <div
+                  style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--grey-mid);margin-top:6px;text-transform:uppercase;">
+                  Norway &middot; International</div>
+              </div>
+            </div>
+            <div class="competition-content">
+              <div class="competition-name">TAC Autonomy Challenge</div>
+              <div class="competition-location">&#x1F4CD; Norway &middot; International</div>
+              <div class="competition-desc">Norway's premier autonomous systems challenge. Teams from top engineering
+                institutes.</div>
+              <div class="competition-result"> Runner-Up &mdash; 2024</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TEAM PREVIEW -->
-  <!-- <section class="team-preview">
+    <!-- TEAM PREVIEW -->
+    <!-- <section class="team-preview">
     <div class="section-inner">
       <div class="section-header">
         <div>
@@ -280,143 +304,251 @@
     </div>
   </section> -->
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand-name">DREADNOUGHT</div>
-        <p class="footer-tagline">Autonomous Underwater Robotics Team at VIT Chennai. Building intelligent machines for the world beneath the surface.</p>
-        <div class="footer-socials">
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-name">DREADNOUGHT</div>
+          <p class="footer-tagline">Autonomous Underwater Robotics Team at VIT Chennai. Building intelligent machines
+            for the world beneath the surface.</p>
+          <div class="footer-socials">
 
-          <a href="https://www.instagram.com/dreadnoughtrobotics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="footer-social">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        
-          <a href="https://www.linkedin.com/company/dreadnought-robotics/" target="_blank" class="footer-social">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        
-          <a href="https://x.com/YOUR_HANDLE" target="_blank" class="footer-social">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        
-          <a href="/cdn-cgi/l/email-protection#5236203733363c3d27353a26203d303d263b312112243b2621262736373c267c33317c3b3c" class="footer-social">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
+            <a href="https://www.instagram.com/dreadnoughtrobotics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" class="footer-social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
 
-</div>
+            <a href="https://www.linkedin.com/company/dreadnought-robotics/" target="_blank" class="footer-social">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://x.com/YOUR_HANDLE" target="_blank" class="footer-social">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="/cdn-cgi/l/email-protection#5236203733363c3d27353a26203d303d263b312112243b2621262736373c267c33317c3b3c"
+              class="footer-social">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Navigate</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+            <li><a href="#" onclick="showPage('competitions')">Competitions</a></li>
+            <li><a href="#" onclick="showPage('team')">Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Location</div>
+          <ul class="footer-links">
+            <li><a href="#">VIT Chennai</a></li>
+            <li><a href="#">Vandalur&ndash;Kelambakkam Rd</a></li>
+            <li><a href="#">Chennai, TN 600127</a></li>
+            <li><a href="#">India</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="#" onclick="showPage('home')">Home</a></li>
-          <li><a href="#" onclick="showPage('projects')">Projects</a></li>
-          <li><a href="#" onclick="showPage('competitions')">Competitions</a></li>
-          <li><a href="#" onclick="showPage('team')">Team</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span> &middot; VIT Chennai. All rights
+          reserved.</div>
+        <div class="footer-copy" style="font-size:10px;">Built by Eshaan </div>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Connect</div>
-        <ul class="footer-links">
-          <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Location</div>
-        <ul class="footer-links">
-          <li><a href="#">VIT Chennai</a></li>
-          <li><a href="#">Vandalur&ndash;Kelambakkam Rd</a></li>
-          <li><a href="#">Chennai, TN 600127</a></li>
-          <li><a href="#">India</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span> &middot; VIT Chennai. All rights reserved.</div>
-      <div class="footer-copy" style="font-size:10px;">Built by Eshaan </div>
-    </div>
-  </footer>
+    </footer>
 
-</div><!-- /page-home -->
+  </div><!-- /page-home -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      PROJECTS PAGE
      ============================================================ -->
-<div id="page-projects" class="page">
-  <div class="page-banner">
-    <div class="page-banner-sub">Engineering Work</div>
-    <h1 class="page-banner-title">OUR <span class="stroke">PROJECTS</span></h1>
-    <p class="page-banner-desc">Full AUV builds to specialized subsystem R&amp;D, each project advances our capability.</p>
-    <div class="page-banner-num">02</div>
-  </div>
-  <div class="projects-page">
-    <div class="projects-page-grid">
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">AUV</div><div class="project-img-badge">Flagship</div><div class="project-num">01</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Veluza|Asterix</div>
-          <div class="project-desc">Vectored 8-thruster 6-DOF control and 60m depth-rated AUV built for subsea exploration, which includes docking, inspection, and intervention tasks.</div>
-          <div class="project-tags"><span class="project-tag">ROS2</span><span class="project-tag">C++</span><span class="project-tag">Python</span><span class="project-tag">SLAM</span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+  <div id="page-projects" class="page">
+    <div class="page-banner">
+      <div class="page-banner-sub">Engineering Work</div>
+      <h1 class="page-banner-title">OUR <span class="stroke">PROJECTS</span></h1>
+      <p class="page-banner-desc">Full AUV builds to specialized subsystem R&amp;D, each project advances our
+        capability.</p>
+      <div class="page-banner-num">02</div>
+    </div>
+    <div class="projects-page">
+      <div class="projects-page-grid">
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/veluza.jpeg');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">01</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Veluza|Asterix</div>
+            <div class="project-desc">Vectored 8-thruster 6-DOF control and 60m depth-rated AUV built for subsea
+              exploration, which includes docking, inspection, and intervention tasks.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">ROS2</span>
+              <span class="project-tag">C++</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">SLAM</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
-      </div>
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">AUV</div><div class="project-img-badge">Flagship</div><div class="project-num">02</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Project MIRA 2.0</div>
-          <div class="project-desc">8 thruster 6-DOF control, custom waterproof electronics, stereo vision,IMU navigation. Built for SAUVC tasks including gate navigation and ball dropping tasks.</div>
-          <div class="project-tags"><span class="project-tag">ROS</span><span class="project-tag">Force Sensing</span><span class="project-tag"></span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/MIRA1.jpeg');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">02</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Project MIRA 2.0</div>
+            <div class="project-desc">8 thruster 6-DOF control, custom waterproof electronics, stereo vision,IMU
+              navigation. Built for SAUVC tasks including gate navigation and ball dropping tasks.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">ROS</span>
+              <span class="project-tag">Force Sensing</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
-      </div>
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">AUV</div><div class="project-img-badge">Flagship</div><div class="project-num">03</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Project MIRA</div>
-          <div class="project-desc">Real-time underwater detection and segmentation. Custom YOLOv8 models trained for gates, buoys, and markers in variable visibility conditions.</div>
-          <div class="project-tags"><span class="project-tag">YOLOv8</span><span class="project-tag">PyTorch</span><span class="project-tag">OpenCV</span><span class="project-tag">TensorRT</span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/MIRA2.jpeg');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">03</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Project MIRA</div>
+            <div class="project-desc">Real-time underwater detection and segmentation. Custom YOLOv8 models trained for
+              gates, buoys, and markers in variable visibility conditions.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">YOLOv8</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">TensorRT</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
-      </div>
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">AUV</div><div class="project-img-badge">Flagship</div><div class="project-num">04</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Calypso</div>
-          <div class="project-desc">4-thruster ROV architecture, dual-camera perception, and tethered underwater operations built for exploration, inspection, and pipeline tracking.</div>
-          <div class="project-tags"><span class="project-tag">EKF</span><span class="project-tag">DVL</span><span class="project-tag">IMU Fusion</span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/argo.jpeg');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">04</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Argo</div>
+            <div class="project-desc">AUV made for Robofest</div>
+
+            <div class="project-tags">
+              <span class="project-tag">ROS</span>
+              <span class="project-tag">Force Sensing</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
-      </div>
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">AUV</div><div class="project-img-badge">Flagship</div><div class="project-num">05</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Calypso SKL</div>
-          <div class="project-desc">Custom power distribution and control board. LiPo BMS, thruster ESC control, kill switch, leak detection, and full sensor data logging.</div>
-          <div class="project-tags"><span class="project-tag">PCB Design</span><span class="project-tag">KiCad</span><span class="project-tag">STM32</span><span class="project-tag">BMS</span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/calypso.jpeg');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">05</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Calypso</div>
+            <div class="project-desc">4-thruster ROV architecture, dual-camera perception, and tethered underwater
+              operations built for exploration, inspection, and pipeline tracking.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">EKF</span>
+              <span class="project-tag">DVL</span>
+              <span class="project-tag">IMU Fusion</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
-      </div>
-      <div class="proj-page-card">
-        <div class="project-img-neo"><div class="project-img-neo-bg">SIM</div><div class="project-img-badge">Simulation</div><div class="project-num">06</div></div>
-        <div class="project-content-inner">
-          <div class="project-title">Gazebo Simulation</div>
-          <div class="project-desc">High-fidelity Gazebo environment for MIRA testing. Hydrodynamic modeling, underwater rendering, and full sensor simulation for pre-pool validation.</div>
-          <div class="project-tags"><span class="project-tag">Gazebo</span><span class="project-tag">ROS2</span><span class="project-tag">URDF</span><span class="project-tag">Hydrodynamics</span></div>
-          <a class="project-link" href="#">GitHub &rarr;</a>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/Calypso.png');">
+            <div class="project-img-badge">Flagship</div>
+            <div class="project-num">06</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Calypso SKL</div>
+            <div class="project-desc">Custom power distribution and control board. LiPo BMS, thruster ESC control, kill
+              switch, leak detection, and full sensor data logging.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">PCB Design</span>
+              <span class="project-tag">KiCad</span>
+              <span class="project-tag">STM32</span>
+              <span class="project-tag">BMS</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
         </div>
+
+        <div class="proj-page-card">
+          <div class="project-img-neo" style="background-image: url('assets/gazebo.jpeg');">
+            <div class="project-img-badge">Simulation</div>
+            <div class="project-num">07</div>
+          </div>
+
+          <div class="project-content-inner">
+            <div class="project-title">Gazebo Simulation</div>
+            <div class="project-desc">High-fidelity Gazebo environment for MIRA testing. Hydrodynamic modeling,
+              underwater rendering, and full sensor simulation for pre-pool validation.</div>
+
+            <div class="project-tags">
+              <span class="project-tag">Gazebo</span>
+              <span class="project-tag">ROS2</span>
+              <span class="project-tag">URDF</span>
+              <span class="project-tag">Hydrodynamics</span>
+            </div>
+
+            <a class="project-link" href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-  <footer><div class="footer-bottom" style="border-top:none;"><div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a></div></footer>
-</div><!-- /page-projects -->
 
-<!-- 
+  </div>
+  </div>
+  <footer>
+    <div class="footer-bottom" style="border-top:none;">
+      <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')"
+        style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a>
+    </div>
+  </footer>
+  </div><!-- /page-projects -->
+
+  <!-- 
 ============================================================
      COMPETITIONS PAGE
      ============================================================ -->
-<!-- <div id="page-competitions" class="page">
+  <!-- <div id="page-competitions" class="page">
   <div class="page-banner">
     <div class="page-banner-sub">Where We Compete</div>
     <h1 class="page-banner-title"><span class="stroke">COMPE</span>TITIONS</h1>
@@ -483,47 +615,125 @@
 </div>/page-competitions -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      TEAM PAGE
      ============================================================ -->
-<div id="page-team" class="page">
-  <div class="page-banner">
-    <div class="page-banner-sub">The People</div>
-    <h1 class="page-banner-title">THE <span class="stroke">TEAM</span></h1>
-    <p class="page-banner-desc">50+ engineers, researchers, and builders united by a shared obsession with autonomous systems.</p>
-    <div class="page-banner-num">04</div>
-  </div>
-  <div class="team-page-content">
-    <div class="team-divider">
-      <div class="team-divider-title">Core Board</div>
-      <div class="team-divider-badge">Leadership &middot; 4 Members</div>
+  <div id="page-team" class="page">
+    <div class="page-banner">
+      <div class="page-banner-sub">The People</div>
+      <h1 class="page-banner-title">THE <span class="stroke">TEAM</span></h1>
+      <p class="page-banner-desc">50+ engineers, researchers, and builders united by a shared obsession with autonomous
+        systems.</p>
+      <div class="page-banner-num">04</div>
     </div>
-    <div class="team-page-grid">
-      <div class="team-card-page"><div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">&#x1F468;&#x200D;&#x1F4BB;</div><div class="team-name">Nishaanth S</div><div class="team-role">Team Captain</div><div class="team-links"><a href="https://linkedin.com/in/nishaanth" target="_blank" class="team-link-btn">in</a></div></div>
-      <div class="team-card-page"><div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">&#x1F469;&#x200D;&#x1F52C;</div><div class="team-name">Eshaan Adyanthaya</div><div class="team-role">Team Manager</div><div class="team-links"><a href="https://linkedin.com/in/your-linkedin" target="_blank" class="team-link-btn">in</a></div></div>
-      <div class="team-card-page"><div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">&#x1F468;&#x200D;&#x1F527;</div><div class="team-name">Harsh Bopalia</div><div class="team-role">Vice Captain</div><div class="team-links"><a href="https://linkedin.com/in/harshbopalia" target="_blank" class="team-link-btn">in</a></div></div>
-      <div class="team-card-page"><div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">&#x1F469;&#x200D;&#x1F4BB;</div><div class="team-name">Anshul Paliwal</div><div class="team-role">Vice Captain</div><div class="team-links"><a href="https://linkedin.com/in/anshulpaliwal" target="_blank" class="team-link-btn">in</a></div></div>
-    </div>
-    <div class="team-divider" style="margin-top:48px;">
-      <div class="team-divider-title">Board Members</div>
-      <div class="team-divider-badge">Domain Leads &middot; 6 Members</div>
-    </div>
-    <div class="team-page-grid">
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F469;&#x200D;&#x1F527;</div><div class="team-name">Namit Nair</div><div class="team-role">AUV Head</div><div class="team-links"><a href="https://linkedin.com/in/namitnair" target="_blank" class="team-link-btn">in</a></div></div>
-  
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F468;&#x200D;&#x1F3A8;</div><div class="team-name">Surya</div><div class="team-role">Electrical and Electronics Head</div><div class="team-links"><a href="https://linkedin.com/in/surya" target="_blank" class="team-link-btn">in</a></div></div>
-  
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F469;&#x200D;&#x1F52C;</div><div class="team-name">David</div><div class="team-role">Programming and Analysis Head</div><div class="team-links"><a href="https://linkedin.com/in/david" target="_blank" class="team-link-btn">in</a></div></div>
-  
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F468;&#x200D;&#x1F4BC;</div><div class="team-name">Rutuparna Kulkarni</div><div class="team-role">Mechanical and Design Head</div><div class="team-links"><a href="https://linkedin.com/in/rutuparna-kulkarni" target="_blank" class="team-link-btn">in</a></div></div>
-  
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F469;&#x200D;&#x1F4BC;</div><div class="team-name">Ankan Mondal</div><div class="team-role">Research and Development Head</div><div class="team-links"><a href="https://linkedin.com/in/ankan-mondal" target="_blank" class="team-link-btn">in</a></div></div>
-  
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F468;&#x200D;&#x1F52C;</div><div class="team-name">Tanisha</div><div class="team-role">Resource Head</div><div class="team-links"><a href="https://linkedin.com/in/tanisha" target="_blank" class="team-link-btn">in</a></div></div>
+    <div class="team-page-content">
+      <div class="team-divider">
+        <div class="team-divider-title">Core Board</div>
+        <div class="team-divider-badge">Leadership &middot; 4 Members</div>
+      </div>
+      <div class="team-page-grid">
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">
+            &#x1F468;&#x200D;&#x1F4BB;</div>
+          <div class="team-name">Nishaanth S</div>
+          <div class="team-role">Team Captain</div>
+          <div class="team-links"><a href="https://linkedin.com/in/nishaanth" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">
+            &#x1F469;&#x200D;&#x1F52C;</div>
+          <div class="team-name">Eshaan Adyanthaya</div>
+          <div class="team-role">Team Manager</div>
+          <div class="team-links"><a href="https://linkedin.com/in/your-linkedin" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">
+            &#x1F468;&#x200D;&#x1F527;</div>
+          <div class="team-name">Harsh Bopalia</div>
+          <div class="team-role">Vice Captain</div>
+          <div class="team-links"><a href="https://linkedin.com/in/harshbopalia" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:80px;height:80px;font-size:32px;margin-bottom:16px;">
+            &#x1F469;&#x200D;&#x1F4BB;</div>
+          <div class="team-name">Anshul Paliwal</div>
+          <div class="team-role">Vice Captain</div>
+          <div class="team-links"><a href="https://linkedin.com/in/anshulpaliwal" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+      </div>
+      <div class="team-divider" style="margin-top:48px;">
+        <div class="team-divider-title">Board Members</div>
+        <div class="team-divider-badge">Domain Leads &middot; 6 Members</div>
+      </div>
+      <div class="team-page-grid">
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F469;&#x200D;&#x1F527;</div>
+          <div class="team-name">Namit Nair</div>
+          <div class="team-role">AUV Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/namitnair" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
 
-      <div class="team-card-page"><div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">&#x1F468;&#x200D;&#x1F4BB;</div><div class="team-name">Abishek</div><div class="team-role">HR and Management Head</div><div class="team-links"><a href="https://linkedin.com/in/abishek" target="_blank" class="team-link-btn">in</a></div></div>
-</div>
-    <!-- <div class="team-divider" style="margin-top:48px;">
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F468;&#x200D;&#x1F3A8;</div>
+          <div class="team-name">Surya</div>
+          <div class="team-role">Electrical and Electronics Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/surya" target="_blank" class="team-link-btn">in</a>
+          </div>
+        </div>
+
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F469;&#x200D;&#x1F52C;</div>
+          <div class="team-name">David</div>
+          <div class="team-role">Programming and Analysis Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/david" target="_blank" class="team-link-btn">in</a>
+          </div>
+        </div>
+
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F468;&#x200D;&#x1F4BC;</div>
+          <div class="team-name">Rutuparna Kulkarni</div>
+          <div class="team-role">Mechanical and Design Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/rutuparna-kulkarni" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F469;&#x200D;&#x1F4BC;</div>
+          <div class="team-name">Ankan Mondal</div>
+          <div class="team-role">Research and Development Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/ankan-mondal" target="_blank"
+              class="team-link-btn">in</a></div>
+        </div>
+
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F468;&#x200D;&#x1F52C;</div>
+          <div class="team-name">Tanisha</div>
+          <div class="team-role">Resource Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/tanisha" target="_blank" class="team-link-btn">in</a>
+          </div>
+        </div>
+
+        <div class="team-card-page">
+          <div class="team-avatar" style="width:72px;height:72px;font-size:26px;margin-bottom:14px;">
+            &#x1F468;&#x200D;&#x1F4BB;</div>
+          <div class="team-name">Abishek</div>
+          <div class="team-role">HR and Management Head</div>
+          <div class="team-links"><a href="https://linkedin.com/in/abishek" target="_blank" class="team-link-btn">in</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="team-divider" style="margin-top:48px;">
       <div class="team-divider-title">Members</div>
       <div class="team-divider-badge">Full Team &middot; 40+ Members</div>
     </div>
@@ -537,150 +747,220 @@
       <div class="team-card-page"><div class="team-avatar" style="width:60px;height:60px;font-size:20px;margin-bottom:12px;">&#x1F464;</div><div class="team-name">Riya Desai</div><div class="team-role">PCB Design</div><div class="team-links"><div class="team-link-btn">in</div></div></div>
       <div class="team-card-page"><div class="team-avatar" style="width:60px;height:60px;font-size:20px;margin-bottom:12px;">&#x1F464;</div><div class="team-name">Vikram Nair</div><div class="team-role">ML Engineer</div><div class="team-links"><div class="team-link-btn">gh</div></div></div>
     </div> -->
-  </div>
-  <footer><div class="footer-bottom" style="border-top:none;"><div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a></div></footer>
-</div><!-- /page-team -->
+    </div>
+    <footer>
+      <div class="footer-bottom" style="border-top:none;">
+        <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#"
+          onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr;
+          Home</a>
+      </div>
+    </footer>
+  </div><!-- /page-team -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      GALLERY PAGE
      ============================================================ -->
-<div id="page-gallery" class="page">
-  <div class="page-banner">
-    <div class="page-banner-sub">Visual Archive</div>
-    <h1 class="page-banner-title">THE <span class="stroke">GALLERY</span></h1>
-    <p class="page-banner-desc">Competitions, pool tests, workshops, and the moments that define Dreadnought Robotics.</p>
-    <div class="page-banner-num">05</div>
-  </div>
-  <div class="gallery-page">
-    <div class="gallery-tabs">
-      <div class="gallery-tab active" onclick="filterGallery('all', this)">All</div>
-      <div class="gallery-tab" onclick="filterGallery('competition', this)">Competitions</div>
-      <div class="gallery-tab" onclick="filterGallery('robot', this)">Robots</div>
-      <div class="gallery-tab" onclick="filterGallery('team', this)">Team</div>
-      <div class="gallery-tab" onclick="filterGallery('testing', this)">Testing</div>
+  <div id="page-gallery" class="page">
+    <div class="page-banner">
+      <div class="page-banner-sub">Visual Archive</div>
+      <h1 class="page-banner-title">THE <span class="stroke">GALLERY</span></h1>
+      <p class="page-banner-desc">Competitions, pool tests, workshops, and the moments that define Dreadnought Robotics.
+      </p>
+      <div class="page-banner-num">05</div>
     </div>
-  <div class="gallery-grid">
-  <div class="gallery-item span-2" data-cat="competition">
-    <img src="assets/sauvc-bg.jpeg" alt="SAUVC Competition" />
-    <div class="gallery-item-label">SAUVC 2023 &middot; Singapore Competition</div>
-  </div>
-  <div class="gallery-item span-row" data-cat="robot">
-    <img src="assets/AUV-MIRA223.jpeg" alt="MIRA AUV" />
-    <div class="gallery-item-label">MIRA AUV &middot; Final Build</div>
-  </div>
-  <div class="gallery-item" data-cat="testing">
-    <img src="assets/MIRA1.jpeg" alt="MIRA Testing" />
-    <div class="gallery-item-label">MIRA &middot; Pool Testing</div>
-  </div>
-  <div class="gallery-item" data-cat="robot">
-    <img src="assets/MIRA2.jpeg" alt="MIRA Robot" />
-    <div class="gallery-item-label">MIRA &middot; Robot Detail</div>
-  </div>
-  <div class="gallery-item span-2" data-cat="team">
-    <img src="assets/IMG-20240615-WA0031.jpg" alt="Team Photo" />
-    <div class="gallery-item-label">Team &middot; 2024</div>
-  </div>
-  <div class="gallery-item" data-cat="team">
-    <img src="assets/20240612_211126.jpg" alt="Team Event" />
-    <div class="gallery-item-label">Team &middot; Event 2024</div>
-  </div>
-  <div class="gallery-item" data-cat="testing">
-    <img src="assets/PXL_20240612_131348363.jpg" alt="Testing Session" />
-    <div class="gallery-item-label">Workshop &middot; Testing Session</div>
-  </div>
-  <div class="gallery-item span-2" data-cat="testing">
-    <img src="assets/b85ce255-8830-42e2-bfc1-76b1163a04f2.jpg" alt="Workshop" />
-    <div class="gallery-item-label">Workshop &middot; Assembly</div>
-  </div>
-</div>
-  </div>
-  <footer><div class="footer-bottom" style="border-top:none;"><div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a></div></footer>
-</div><!-- /page-gallery -->
+    <div class="gallery-page">
+      <div class="gallery-tabs">
+        <div class="gallery-tab active" onclick="filterGallery('all', this)">All</div>
+        <div class="gallery-tab" onclick="filterGallery('competition', this)">Competitions</div>
+        <div class="gallery-tab" onclick="filterGallery('robot', this)">Robots</div>
+        <div class="gallery-tab" onclick="filterGallery('team', this)">Team</div>
+        <div class="gallery-tab" onclick="filterGallery('testing', this)">Testing</div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item span-2" data-cat="competition">
+          <img src="assets/sauvc-bg.jpeg" alt="SAUVC Competition" />
+          <div class="gallery-item-label">SAUVC 2023 &middot; Singapore Competition</div>
+        </div>
+        <div class="gallery-item span-row" data-cat="robot">
+          <img src="assets/AUV-MIRA223.jpeg" alt="MIRA AUV" />
+          <div class="gallery-item-label">MIRA AUV &middot; Final Build</div>
+        </div>
+        <div class="gallery-item" data-cat="testing">
+          <img src="assets/MIRA1.jpeg" alt="MIRA Testing" />
+          <div class="gallery-item-label">MIRA &middot; Pool Testing</div>
+        </div>
+        <div class="gallery-item" data-cat="robot">
+          <img src="assets/MIRA2.jpeg" alt="MIRA Robot" />
+          <div class="gallery-item-label">MIRA &middot; Robot Detail</div>
+        </div>
+        <div class="gallery-item span-2" data-cat="team">
+          <img src="assets/IMG-20240615-WA0031.jpg" alt="Team Photo" />
+          <div class="gallery-item-label">Team &middot; 2024</div>
+        </div>
+        <div class="gallery-item" data-cat="team">
+          <img src="assets/20240612_211126.jpg" alt="Team Event" />
+          <div class="gallery-item-label">Team &middot; Event 2024</div>
+        </div>
+        <div class="gallery-item" data-cat="testing">
+          <img src="assets/PXL_20240612_131348363.jpg" alt="Testing Session" />
+          <div class="gallery-item-label">Workshop &middot; Testing Session</div>
+        </div>
+        <div class="gallery-item span-2" data-cat="testing">
+          <img src="assets/b85ce255-8830-42e2-bfc1-76b1163a04f2.jpg" alt="Workshop" />
+          <div class="gallery-item-label">Workshop &middot; Assembly</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-bottom" style="border-top:none;">
+        <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#"
+          onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr;
+          Home</a>
+      </div>
+    </footer>
+  </div><!-- /page-gallery -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      SPONSORS PAGE
      ============================================================ -->
-<div id="page-sponsors" class="page">
-  <div class="page-banner">
-    <div class="page-banner-sub">Our Partners</div>
-    <h1 class="page-banner-title">OUR <span class="stroke">SPONSORS</span></h1>
-    <p class="page-banner-desc">The organizations that make our work possible. Their support enables us to compete and build.</p>
-    <div class="page-banner-num">06</div>
-  </div>
-  <div class="sponsors-page">
-    <div class="sponsors-tier">
-      <div class="tier-header"><div class="tier-badge tier-gold-bg">Gold Partners</div><div class="tier-desc">Primary sponsors &middot; Maximum visibility</div></div>
-      <div class="sponsors-grid">
-        <div class="sponsor-card lg"><div class="sponsor-logo">&#x1F3ED;</div><div class="sponsor-name">Sponsor Co.</div></div>
-        <div class="sponsor-card lg"><div class="sponsor-logo">&#x2699;&#xFE0F;</div><div class="sponsor-name">Tech Systems</div></div>
-        <div class="sponsor-card lg"><div class="sponsor-logo">&#x1F52C;</div><div class="sponsor-name">Research Labs</div></div>
+  <div id="page-sponsors" class="page">
+    <div class="page-banner">
+      <div class="page-banner-sub">Our Partners</div>
+      <h1 class="page-banner-title">OUR <span class="stroke">SPONSORS</span></h1>
+      <p class="page-banner-desc">The organizations that make our work possible. Their support enables us to compete and
+        build.</p>
+      <div class="page-banner-num">06</div>
+    </div>
+    <div class="sponsors-page">
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <div class="tier-badge tier-gold-bg">Gold Partners</div>
+          <div class="tier-desc">Primary sponsors &middot; Maximum visibility</div>
+        </div>
+        <div class="sponsors-grid">
+          <div class="sponsor-card lg">
+            <div class="sponsor-logo">&#x1F3ED;</div>
+            <div class="sponsor-name">Sponsor Co.</div>
+          </div>
+          <div class="sponsor-card lg">
+            <div class="sponsor-logo">&#x2699;&#xFE0F;</div>
+            <div class="sponsor-name">Tech Systems</div>
+          </div>
+          <div class="sponsor-card lg">
+            <div class="sponsor-logo">&#x1F52C;</div>
+            <div class="sponsor-name">Research Labs</div>
+          </div>
+        </div>
+      </div>
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <div class="tier-badge tier-silver-bg">Silver Partners</div>
+          <div class="tier-desc">Secondary sponsors &middot; High visibility</div>
+        </div>
+        <div class="sponsors-grid">
+          <div class="sponsor-card md">
+            <div class="sponsor-logo">&#x1F4BB;</div>
+            <div class="sponsor-name">DevTech</div>
+          </div>
+          <div class="sponsor-card md">
+            <div class="sponsor-logo">&#x1F50C;</div>
+            <div class="sponsor-name">ElectroParts</div>
+          </div>
+          <div class="sponsor-card md">
+            <div class="sponsor-logo">&#x1F6E0;</div>
+            <div class="sponsor-name">Fabricate</div>
+          </div>
+          <div class="sponsor-card md">
+            <div class="sponsor-logo">&#x1F4E1;</div>
+            <div class="sponsor-name">SignalCo</div>
+          </div>
+        </div>
+      </div>
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <div class="tier-badge tier-bronze-bg">Community Partners</div>
+          <div class="tier-desc">In-kind &amp; community support</div>
+        </div>
+        <div class="sponsors-grid">
+          <div class="sponsor-card sm">
+            <div class="sponsor-logo">&#x1F91D;</div>
+            <div class="sponsor-name">Partner A</div>
+          </div>
+          <div class="sponsor-card sm">
+            <div class="sponsor-logo">&#x1F91D;</div>
+            <div class="sponsor-name">Partner B</div>
+          </div>
+          <div class="sponsor-card sm">
+            <div class="sponsor-logo">&#x1F91D;</div>
+            <div class="sponsor-name">Partner C</div>
+          </div>
+          <div class="sponsor-card sm">
+            <div class="sponsor-logo">&#x1F91D;</div>
+            <div class="sponsor-name">Partner D</div>
+          </div>
+        </div>
+      </div>
+      <div class="sponsor-cta">
+        <div class="sponsor-cta-title">Become a Sponsor</div>
+        <div class="sponsor-cta-desc">Support the next generation of autonomous underwater systems engineers. Get
+          visibility at international competitions.</div>
+        <button class="btn-brutal white" onclick="showPage('contact')">Get in Touch &rarr;</button>
       </div>
     </div>
-    <div class="sponsors-tier">
-      <div class="tier-header"><div class="tier-badge tier-silver-bg">Silver Partners</div><div class="tier-desc">Secondary sponsors &middot; High visibility</div></div>
-      <div class="sponsors-grid">
-        <div class="sponsor-card md"><div class="sponsor-logo">&#x1F4BB;</div><div class="sponsor-name">DevTech</div></div>
-        <div class="sponsor-card md"><div class="sponsor-logo">&#x1F50C;</div><div class="sponsor-name">ElectroParts</div></div>
-        <div class="sponsor-card md"><div class="sponsor-logo">&#x1F6E0;</div><div class="sponsor-name">Fabricate</div></div>
-        <div class="sponsor-card md"><div class="sponsor-logo">&#x1F4E1;</div><div class="sponsor-name">SignalCo</div></div>
+    <footer>
+      <div class="footer-bottom" style="border-top:none;">
+        <div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#"
+          onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr;
+          Home</a>
       </div>
-    </div>
-    <div class="sponsors-tier">
-      <div class="tier-header"><div class="tier-badge tier-bronze-bg">Community Partners</div><div class="tier-desc">In-kind &amp; community support</div></div>
-      <div class="sponsors-grid">
-        <div class="sponsor-card sm"><div class="sponsor-logo">&#x1F91D;</div><div class="sponsor-name">Partner A</div></div>
-        <div class="sponsor-card sm"><div class="sponsor-logo">&#x1F91D;</div><div class="sponsor-name">Partner B</div></div>
-        <div class="sponsor-card sm"><div class="sponsor-logo">&#x1F91D;</div><div class="sponsor-name">Partner C</div></div>
-        <div class="sponsor-card sm"><div class="sponsor-logo">&#x1F91D;</div><div class="sponsor-name">Partner D</div></div>
-      </div>
-    </div>
-    <div class="sponsor-cta">
-      <div class="sponsor-cta-title">Become a Sponsor</div>
-      <div class="sponsor-cta-desc">Support the next generation of autonomous underwater systems engineers. Get visibility at international competitions.</div>
-      <button class="btn-brutal white" onclick="showPage('contact')">Get in Touch &rarr;</button>
-    </div>
-  </div>
-  <footer><div class="footer-bottom" style="border-top:none;"><div class="footer-copy">&copy; 2024 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a></div></footer>
-</div><!-- /page-sponsors -->
+    </footer>
+  </div><!-- /page-sponsors -->
 
 
-<!-- ============================================================
+  <!-- ============================================================
      CONTACT PAGE
      ============================================================ -->
-<div id="page-contact" class="page">
-  <div class="page-banner">
-    <div class="page-banner-sub">Reach Us</div>
-    <h1 class="page-banner-title">GET IN <span class="stroke">TOUCH</span></h1>
-    <p class="page-banner-desc">Find us on socials or drop us an email, we'd love to hear from you.</p>
-    <div class="page-banner-num">07</div>
-  </div>
-  <div class="contact-page">
-    <div class="contact-socials-grid">
-      <a href="mailto:dreadnought.robotics@vit.ac.in" class="contact-social-card">
-        <div class="contact-social-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="contact-social-label">Email</div>
-        <div class="contact-social-value">dreadnought.robotics@vit.ac.in</div>
-        <div class="contact-social-handle">Official team email</div>
-      </a>
-      <a href="https://www.instagram.com/dreadnoughtrobotics" target="_blank" class="contact-social-card">
-        <div class="contact-social-icon"><i class="fa-brands fa-instagram"></i></div>
-        <div class="contact-social-label">Instagram</div>
-        <div class="contact-social-value">@dreadnoughtrobotics</div>
-        <div class="contact-social-handle">Updates &amp; behind the scenes</div>
-      </a>
-      <a href="https://www.linkedin.com/company/dreadnought-robotics/" target="_blank" class="contact-social-card">
-        <div class="contact-social-icon"><i class="fa-brands fa-linkedin"></i></div>
-        <div class="contact-social-label">LinkedIn</div>
-        <div class="contact-social-value">Dreadnought Robotics VIT</div>
-        <div class="contact-social-handle">Professional updates &amp; recruitment</div>
-      </a>
+  <div id="page-contact" class="page">
+    <div class="page-banner">
+      <div class="page-banner-sub">Reach Us</div>
+      <h1 class="page-banner-title">GET IN <span class="stroke">TOUCH</span></h1>
+      <p class="page-banner-desc">Find us on socials or drop us an email, we'd love to hear from you.</p>
+      <div class="page-banner-num">07</div>
     </div>
-  </div>
-  <footer><div class="footer-bottom" style="border-top:none;"><div class="footer-copy">&copy; 2026 <span>Dreadnought Robotics</span></div><a href="#" onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr; Home</a></div></footer>
-</div><!-- /page-contact -->        
-</div><!-- /pages-container -->
-<script src="main.js"></script>
-</body> 
+    <div class="contact-page">
+      <div class="contact-socials-grid">
+        <a href="mailto:dreadnought.robotics@vit.ac.in" class="contact-social-card">
+          <div class="contact-social-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-social-label">Email</div>
+          <div class="contact-social-value">dreadnought.robotics@vit.ac.in</div>
+          <div class="contact-social-handle">Official team email</div>
+        </a>
+        <a href="https://www.instagram.com/dreadnoughtrobotics" target="_blank" class="contact-social-card">
+          <div class="contact-social-icon"><i class="fa-brands fa-instagram"></i></div>
+          <div class="contact-social-label">Instagram</div>
+          <div class="contact-social-value">@dreadnoughtrobotics</div>
+          <div class="contact-social-handle">Updates &amp; behind the scenes</div>
+        </a>
+        <a href="https://www.linkedin.com/company/dreadnought-robotics/" target="_blank" class="contact-social-card">
+          <div class="contact-social-icon"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="contact-social-label">LinkedIn</div>
+          <div class="contact-social-value">Dreadnought Robotics VIT</div>
+          <div class="contact-social-handle">Professional updates &amp; recruitment</div>
+        </a>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-bottom" style="border-top:none;">
+        <div class="footer-copy">&copy; 2026 <span>Dreadnought Robotics</span></div><a href="#"
+          onclick="showPage('home')" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-mid);">&larr;
+          Home</a>
+      </div>
+    </footer>
+  </div><!-- /page-contact -->
+  </div><!-- /pages-container -->
+  <script src="main.js"></script>
+</body>
+
 </html>
