@@ -560,7 +560,6 @@ footer { background: var(--black); border-top: var(--border-thick); padding: 60p
   position: relative;
   height: 220px;
   overflow: hidden;
-  border-radius: 12px;
   filter: grayscale(100%);
 }
 
@@ -602,7 +601,7 @@ footer { background: var(--black); border-top: var(--border-thick); padding: 60p
 }
 
 .tac-bg{
-  background-image:url("assets/tac.jpg");
+  background-image:url("assets/hero-bg.jpg");
 }
 
 .competition-header{
@@ -630,4 +629,30 @@ footer { background: var(--black); border-top: var(--border-thick); padding: 60p
 .gallery-item:hover img {
   filter: grayscale(0%);
   transform: scale(1.05);
+}
+
+.project-img-neo1 {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: var(--border-thick);
+}
+
+.project-img-neo1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+
+    transition: filter 0.4s ease,
+                -webkit-filter 0.4s ease,
+                transform 0.4s ease;
+}
+
+.proj-page-card:hover .project-img-neo1 img {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
 }
